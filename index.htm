@@ -1,0 +1,120 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Главная</title>
+</head>
+
+<SCRIPT language="JavaScript">
+
+<!--
+
+let isAlertShow = sessionStorage.getItem('isAlertShow');
+    if(!isAlertShow){
+        let name = prompt('Введите ваше имя');
+        alert(`Добро пожаловать, ${name} !`);
+        sessionStorage.setItem('isAlertShow', true);
+}
+m_Name=new Array("января", "февраля", "марта",
+"апреля", "мая", "июня", "июля", "августа",
+"сентября", "октября", "ноября", "декабря");
+
+d_Name=new Array("Воскресенье", "Понедельник",
+"Вторник", "Среда", "Четверг", "Пятница",
+"Суббота");
+
+function showTime(){
+
+var Now = new Date(); //Создается новый объект Date, который представляет текущую дату и время.
+
+var str=" "+ d_Name[Now.getDay()] + ", " ; // Создается переменная str, которая будет хранить строку с отформатированным выводом даты и времени.
+
+str+= Now.getDate()+" "+m_Name[Now.getMonth()]+
+" " + Now.getFullYear()+" года ";
+str+= Now.getHours() + " час. " +
+Now.getMinutes() + " мин. " +
+Now.getSeconds()+" сек ";
+document.write(str);
+}
+
+
+
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+</SCRIPT>
+
+<base target="_self">
+<style>
+<!--
+h5           {  }
+-->
+</style>
+</head>
+
+<body onload="FP_preloadImgs(/*url*/'button2.jpg', /*url*/'button3.jpg')" background="images/фон.jpg">
+
+<h1 align="center"><font face="Arial Black" color="#000080">П</font><font face="Arial Black" color="#0000FF">о</font><font face="Arial Black" color="#000080">ч</font><font face="Arial Black" color="#0000FF">т</font><font face="Arial Black" color="#000080">а</font></h1>
+
+<CENTER>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+showTime()
+//-->
+</SCRIPT>
+</CENTER>
+
+<body background="images/фон.jpg">
+
+<h4 align="center"><font face="Arial Black"><u><a href="pv.htm">Пункты выдачи</a></u>
+<span lang="en-us">|</span> <u><a href="pip.htm">Посылки и письма</a></u> <span lang="en-us">|</span> 
+<u><a href="opers.htm">Операторы</a> </u></font></h4>
+<hr>
+
+<p><marquee><font face="Arial Black">Почтовые отправления по всей России</font></marquee></p>
+<table border="0" width="94%" style="border-collapse: collapse" cellpadding="0">
+	<tr>
+		<td width="290">
+		<img border="0" src="images/письма.jpg" width="243" height="248"></td>
+		<td><font color="#0000FF" face="Arial Black" size="4">
+		<span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp; </span>НЕМНОГО О НАС</font><p align="justify">
+		<font face="Arial Black"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>Несмотря на развитие интернета, почта сохраняет своё огромное<span lang="en-us">
+		</span>значение, потому что перемещение материальных объектов невозможно 
+		при помощи электромагнитных волн. </font></p>
+		<p><font face="Arial Black"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>При помощи почты доставляются корреспонденция, посылки, 
+		бандероли. Так же при помощи почты доставляются посылки из 
+		интернет-магазинов. </font></td>
+	</tr>
+</table>
+<p><font face="Arial Black"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Для того, чтобы отследить ваши посылки, письма и другие возможные 
+отправления, необходимо зарегистрироваться на данном сайте</font></p>
+<p align="center"><font face="Arial Black"><a href="form.htm">Регистрация</a></font></p>
+<hr>
+<p align="center"><font face="Arial Black">Телефон:<font color="#0000FF"> 
+8(999)-999-99-99</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span lang="en-us">E-mail: <font color="#0000FF">pochta@mail.ru</font></span></font></p>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Форма</title>
+</head>
+
+<body background="images/фон.jpg">
+
+<h1 align="center"><font face="Arial Black" color="#000080">П</font><font face="Arial Black" color="#0000FF">о</font><font face="Arial Black" color="#000080">ч</font><font face="Arial Black" color="#0000FF">т</font><font face="Arial Black" color="#000080">а</font></h1>
+<h4 align="center"><font face="Arial Black"><u><a href="pv.htm">Пункты выдачи</a></u>
+<span lang="en-us">|</span> <u><a href="pip.htm">Посылки и письма</a></u> <span lang="en-us">|</span> 
+<u><a href="opers.htm">Операторы</a> </u></font></h4>
+<hr>
+
+<p align="center"><font face="Arial Black" size="4">Регистрация</font></p>
+
+<form id="FrontPage_Form1" method="get" action="add.asp" style="float: center; max-height: 500px; max-width: 329px; line-height:100%; margin-top:-2" onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+  <div align="center"  style=" max-width: 329px; max-height: 500px; border: 2px; border-color: black;">
+
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Имя&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" id="firstName" name="firstName" size="20" required placeholder="Пример: Иван"></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Фамилия&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" id="surName" name="surName" size="20" required placeholder="Пример: Иванов"></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Адрес&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" id="address" name="address" size="20"></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span lang="en-us">E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" id="email" name="email" size="20"></span></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Выберите ваш пункт выдачи&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<select id="Punkts" name="Punkts">
+  	<option value=" "></option>
+  	<option value="P1">№1011 (ул.Морозова, д.15)</option>
+	<option value="P2">№2022 (ул. Шереметьева, д.37)</option>
+	<option value="P3">№3033 (ул. 50 лет ОАМТ, д.53)</option>	
+	<option value="P4">№4044 (пр. Революции, д.19)</option>
+	</select></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Выберите вашего оператора<span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<select id="Operators" name="Operators">
+	<option value=" "></option>
+	<option value="O1">Илья</option>
+	<option value="O2">Иван</option>
+	<option value="O3">Мария</option>
+	<option value="O4">Ксения</option>
+	</select></span></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</p>
+
+
+<script language="JavaScript">
+<!--
+function proverka() 
+{  
+
+
+//проверка имени
+ var reg = /^[А-Я][а-я]+$/; //регулярное выражение для проверки имени с большой буквы
+var name = document.getElementById('firstName').value;
+
+if(name != '' && reg.test(name)) {
+aa = window.confirm('Имя введено правильно');
+  //alert('Имя введено правильно')
+} else {
+  aa = false; alert('Имя введено неправильно! Первая буква должна быть прописной, остальные - строчными.')
+}
+
+//проверка фамилии
+ var regf = /^[А-Я][а-я]+$/; //регулярное выражение для проверки фамилии с большой буквы
+var surname = document.getElementById('surName').value;
+
+if(name != '' && reg.test(name)) {
+bb = window.confirm('Фамилия введена правильно');
+  //alert('Фамилия введена правильно')
+} else {
+  bb = false; alert('Фамилия введена неправильно! Первая буква должна быть прописной, остальные - строчными.')
+}
+
+
+//проверка выбран ли пункт выдачи
+if (document.getElementById('Punkts').value != ' ')
+  {
+  cc = window.confirm('Пункт выдачи выбран успешно');
+  //alert('Пункт выдачи выбран успешно')
+} else {
+  cc = false; alert('Вы не выбрали пункт выдачи!')
+}
+
+
+//проверка выбран ли оператор
+if (document.getElementById('Operators').value != ' ')
+  {
+  dd = window.confirm('Оператор выбран успешно');
+  //alert('Оператор выбрана успешно')
+} else {
+  dd = false; alert('Вы не выбрали оператора!')
+}
+
+
+if (aa && bb && cc && dd ) {FrontPage_Form1.submit();}
+
+
+
+}
+//-->
+</script>
+	</p>
+	<p>&nbsp;</p>
+
+	<p align="center">&nbsp;<input type="button" value="Регистрация" name="B1" onclick="proverka()">
+	    <input type="reset" value="Сбросить всё" name="B2">
+	<p>&nbsp;</p>
+<p>&nbsp;</p>
+	<p>
+
+</form>
+
+	<span class="style1">
+	<a href="default.asp">
+<p>&nbsp;</p>
+<p align="center"><font face="Arial Black">БАЗА ДАННЫХ</font></p>
+<hr>
+<p align="center"><font face="Arial Black">Телефон: <font color="#0000FF">
+8(999)-999-99-99</font><span style="text-decoration: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>
+<span lang="en-us">E-mail: <font color="#0000FF">pochta@mail.ru</font></span></font></p>
+
+</body>
+
+</html>
